@@ -6,30 +6,54 @@
 //view current message
 
 class Tweet {
-    constructor(tweet) {
-        if (tweet.length <= 140) {
-            this.tweet = tweet;
-        } else {
-            console.log("Message over 140 characters");
-            }
+    constructor(message, maxCharacterLength){
+        this.maxCharacterLength = 140;
+        if (message.length > 140){
+            console.log("This tweet is more than 140 characters");
         }
-
-        // addCharacter(character) {
-        //     this.tweet.push(character);
-        // }
-
-        removeCharacter() {
-            this.tweet.pop();
+        else {  
+            this.message = [message];
         }
     }
+    addLetter(letter){
+        if(this.message.length + 1 > this.maxCharacterLength){
+            console.log( `Max character count of ${this.maxCharacterLength} reached`); }
+       else {
+        return this.message.push(letter);}
+        }
+    removeLetter(){
+        this.message.pop();
+    }
+    viewMessage(){
+        console.log(this.message.join(''));
+    }
+    validateCharacterLength(){
+        if(this.message.length + 1 > this.maxCharacterLength){
+            console.log(`Max character count of ${this.maxCharacterLength} reached`);
+        }
+    }
+}
+let user = new Tweet("This is my first tweet", 140);
+let user1 = new Tweet("askdjflas;jdkfasjlkdfjlaksdfjlaksdjfsklajdflkdsajf;kasjdfkjsaldfkjad;fjkadjfklasjdf;akjdfssaasdjfklas;dfkjasdfjlkas;djflkasjdflkajsdfkljsalkd;fjlsdakjflkasjdfklsa;djflsakjdfl;aldjsfkl;adjjdf;sjaldfkjaskdjfdas;jfskad;jf;akdjfka;sdfjd", 140);
+console.log(user);
+console.log(user1);
+
+user.addLetter(' ');
+user.addLetter('h');
+user.addLetter('e');
+user.addLetter('l');
+user.addLetter('l');
+user.addLetter('o');
+user.addLetter('!');
+console.log('Popping character off the tweet');
+user.viewMessage();
+user.removeLetter();
+user.viewMessage();
+user.removeLetter();
+user.viewMessage();
 
 
-let tweet1 = new Tweet("This is a tweet over 140 characters   dkfgagfhlkdfshglkhsdkfhglksdhfgkhsdfgkhsdklfghkldshfgkhsdfghksldfhgksdhfgkhsdfkghdskfghlkdshfg;kdshfgkshdfglkhdsfghslkdhfglkdshfglshdflgkhsdlkfghskldfhgksldhfgkshfdkghsdfkghsdkfghksdlhfg;ksdhfgkh;sdfghsdflghsd;fhg");
-let tweet2 = new Tweet("This is my first tweet");
-//tweet2.addCharacter("!");
-console.log(tweet1);
-console.log(tweet2);
-console.log(tweet2.removeCharacter());
+
 
 
 
