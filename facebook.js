@@ -1,11 +1,8 @@
 let post = {
     name: "Katharyn Lynn Oggenfuss",
-    tag: "Code Differently",
     message: "Code Differently is the best!",
     time: "7:20",
     reaction: ["thumbs up", "love", "thumbs down", "angry", "shocked"],
-    picture: "image",
-    caption : "Coding is awesome!",
     comment: "that's great!",
     share: "share with friends",
     
