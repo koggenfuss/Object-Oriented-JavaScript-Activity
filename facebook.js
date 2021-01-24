@@ -21,9 +21,9 @@ let post = {
     },
 
     react(feeling) {
-        for( let i=0; i < reaction.length; i++) {
-            if (feeling === reaction[i]) {
-                return reaction[i];
+        for( let i=0; i < this.reaction.length; i++) {
+            if (feeling === this.reaction[i]) {
+                return this.reaction[i];
             }
         }
     }
@@ -31,4 +31,4 @@ let post = {
 
 console.log(post.addComment("This is my first comment"));
 console.log(post.time());
-console.log(post.feeling());
+console.log(post.react("love"));
